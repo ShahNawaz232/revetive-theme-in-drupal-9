@@ -1,0 +1,99 @@
+langcode: en
+status: true
+dependencies: {  }
+id: yaa_node_events
+migration_tags: null
+migration_group: yaa_example
+label: 'Nodes (Events)'
+source:
+  plugin: d7_node
+  node_type: events
+process:
+  nid: nid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  # by not using plugin migration, this has potential of id collisions.
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  body: body
+  # references migration ya_node_page for id migration integrity.
+  title:
+    plugin: iterator
+    source: field_drupal7_pages
+    process:
+      target_id:
+        plugin: migration
+        migration: yaa_node_events
+        source: target_id            
+  body:
+    plugin: iterator
+    source: body
+    process:
+      value: value
+      summary: summary
+      format:
+        plugin: default_value
+        default_value: full_html
+  process:
+    field_date:
+      plugin: iterator
+      source: field_date
+      process:
+        value:
+          plugin: substr
+          source: value
+          start: 0
+          length: 10       
+  address: field_address:
+    plugin: iterator
+    source: field_drupal7_pages
+    process:
+      target_id:
+        plugin: migration
+        migration: yaa_node_events
+        source: target_id 
+  image:
+    plugin: iterator
+    source: field_drupal7_pages
+    process:
+      target_id:
+        plugin: migration
+        migration: yaa_node_events
+        source: target_id
+      alt: alt
+      title: title
+      height: height
+      width: width          
+  You will come ?:
+    plugin: iterator
+    source: field_drupal7_pages
+    process:
+      target_id:
+        plugin: migration
+        migration: yaa_node_pages
+        source: target_id
+  Menus:
+    plugin: iterator
+    source: field_drupal7_pages
+    process:
+      target_id:
+        plugin: migration
+        migration: yaa_node_events
+        source: target_id                             
+destination:
+  plugin: 'entity:node'
+  default_bundle: events
+migration_dependencies:
+  required:
+    - yaa_node_events

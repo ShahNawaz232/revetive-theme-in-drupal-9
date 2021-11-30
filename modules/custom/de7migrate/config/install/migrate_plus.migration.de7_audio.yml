@@ -1,0 +1,40 @@
+id: de7_audio
+label: Events
+migration_tags:
+  - Drupal 7
+deriver: Drupal\node\Plugin\migrate\D7NodeDeriver
+migration_group: de7
+source:
+  plugin: d7_node
+  node_type: events
+process:
+#  nid and vid is commented out will allow them to autoincrement. Safe as
+#    as nothing else is referencing them.
+#  nid: nid
+#  vid: vid
+  type:
+    plugin: default_value
+    default_value: events
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  body/formate:
+    plugin: default_value
+    default_value: full html
+  body/value: body
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+destination:
+  plugin: entity:node
+migration_dependencies: {}      

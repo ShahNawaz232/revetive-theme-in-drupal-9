@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ya_node_article
+migration_tags: null
+migration_group: ya_examples
+label: 'Nodes (Article)'
+source:
+  plugin: d7_node
+  node_type: article
+process:
+  nid: nid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  # by not using plugin migration, this has potential of id collisions.
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  body: body
+  # references migration ya_node_page for id migration integrity.
+  field_drupal8_pages:
+    plugin: iterator
+    source: field_drupal7_pages
+    process:
+      target_id:
+        plugin: migration
+        migration: ya_node_page
+        source: target_id
+destination:
+  plugin: 'entity:node'
+  default_bundle: article
+migration_dependencies:
+  required:
+    - ya_node_page

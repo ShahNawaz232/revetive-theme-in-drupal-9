@@ -1,0 +1,53 @@
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+   <div class="logo"> {{ page.logo }}</div>
+    {{ page.navigation }}
+        </div>
+        </nav>
+
+        <div class="container">
+            {{ page.highlighted }}
+             
+              <div class="row">
+                <div class="col-lg-9">
+                    {{ page.sidebar_first }}
+                </div> 
+                <div class="col-lg-3">
+                   {{ page.sidebar_second }}
+                </div>
+            </div>
+          </div>
+
+        {{ page.content }}
+    
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                  <div class="col-lg-3 py-3">
+                    <h3>Reve<span class="fg-primary">Tive.</span></h3>
+                  </div>
+                  <div class="col-lg-3 py-3">
+                    <h5>Contact Information</h5>
+                    <p>301 The Greenhouse, Custard Factory, London, E2 8DY.</p>
+                    <p>Email: example@mail.com</p>
+                    <p>Phone: +00 112323980</p>
+                  </div>
+                  <div class="col-lg-3 py-3">
+                    <h5>Company</h5>
+                    {{ page.footer_two }}
+                  </div>
+                  
+                  <div class="col-lg-3 py-3">
+                    {{ page.footer_three }}
+                  </div>
+                </div>
+            </div>
+        <div class="container">
+            <hr class="footer-border">
+        <div class="mt-4">
+     <p>Copyright 2021. This template designed by <a href="https://www.matechco.com">MATECT CO..</a></p>
+        {{ page.footer_last }}
+    </div>
+  </div>
+</footer>     

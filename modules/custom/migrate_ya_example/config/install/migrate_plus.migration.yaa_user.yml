@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies: { }
+id: yaa_user
+migration_tags: null
+migration_group: yaa_example
+label: 'User accounts'
+source:
+  plugin: drupal_seven_user
+process:
+  uid: 1
+  name: seven
+  pass: seven
+  mail: seven@abcgmail.com
+  created: created
+  access: access
+  login: login
+  status: status
+  timezone: timezone
+  langcode: language
+  preferred_langcode: language
+  preferred_admin_langcode: language
+  init: init
+  roles:
+    plugin: migration
+    migration: yaa_user_role
+    source: roles
+  user_picture:
+    -
+      plugin: default_value
+      source: picture
+      default_value: null
+    -
+      plugin: migration
+      migration: file
+destination:
+  plugin: 'entity:user'
+migration_dependencies: {}

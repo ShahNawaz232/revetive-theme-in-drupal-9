@@ -1,0 +1,14 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/custom.css: {}
+      https://fonts.googleapis.com/css?family=Nunito:200,800: {type: external}
+  js:
+    js/main.js: {}
+    js/popper.min.js: {}
+    js/bootstrap.min.js: {} 
+    js/main.min.js: {}
+  dependencies:
+    - core/jquery
+    

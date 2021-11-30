@@ -1,0 +1,25 @@
+<div class="page-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="subhead">{{ content.field_service_subhead }}</div>
+        <h2 class="title-section">{{ content.field_service_title }}</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        {% for key,value in content.field_service_img['#items'] %}
+        <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
+          <div class="text-center">
+            <div class="img-fluid mb-4 service-img">
+               {{ content.field_service_img[key] }}
+            </div>
+            <h5>{{ content.field_service_h5[key] }}</h5>
+          
+          </div>
+         
+        </div>
+        {% endfor %}
+      </div>
+     
+    </div> <!-- .container -->
+  
+  </div>

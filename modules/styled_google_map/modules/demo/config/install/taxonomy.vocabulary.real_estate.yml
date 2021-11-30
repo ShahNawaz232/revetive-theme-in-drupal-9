@@ -1,0 +1,6 @@
+status: true
+dependencies: {  }
+name: 'Real Estate'
+vid: real_estate
+description: 'Styled Google Map Demo Vocabulary'
+weight: 0

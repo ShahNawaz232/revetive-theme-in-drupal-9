@@ -1,0 +1,55 @@
+<div class="page-banner">
+  <div class="project-img bg-img">  {{ content.field_portfolio_next_banner_img }}</div>
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-lg-8">
+          <div class="container h-100">
+            <div class="row justify-content-center align-items-center h-100">
+              <div class="col-lg-8">
+                <div class="container h-100">
+                  <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-lg-8">
+                      <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+                          <li class="breadcrumb-item"><a href="/webform/home">{{ content.field_bred_first }}</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">{{ content.field_bred_two }}</li>
+                        </ol>
+                      </nav>
+                      <h1 class="fg-white text-center">{{ content.field_bred_t }}</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .page-banner -->
+
+
+<main>
+  <div class="page-section">
+    <div class="container">
+      <div class="grid mt-3">
+          <div class="row">
+        {% for key,value in content.field_portfolio_next_img['#items'] %}
+        <div class="grid-item mobile">
+          <div class="portfolio">
+        <a href="#"> {{ content.field_portfolio_next_img[key] }} </a> 
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+      </div> <!-- .grid -->
+      <div class="mt-5 text-center">
+        
+     
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+  </main>
+
+
+
